@@ -10,11 +10,30 @@ public class InputSeqeunce {
     }
 
     public MyNumber[] getNumbers() {
-        MyRegex myRegex = new MyRegex();
+        MyRegex myRegex = decideRegex();
+        if(hasCustomRegex())
+            removeCustomRegexStatement();
         return splitNumbers(input, myRegex);
     }
 
-    //MyRegex가 굳이 class로 있어야 하나? 있다면 좀 더 우아한 방법 없나? => 메소드 삭제, 기본 덧셈 기능에서는 다양한 regex 고려할 필요 없음
+    private boolean hasCustomRegex() {
+        return input.contains("//") && input.contains("\\n");
+    }
+
+    private MyRegex decideRegex() {
+        if(hasCustomRegex()) {
+            String[] inputTokens = input.split("\\\\n");
+            String customRegex = inputTokens[0].replace("//", "");
+            return new MyRegex(customRegex);
+        }
+        return new MyRegex();
+    }
+
+    private void removeCustomRegexStatement() {
+        String[] inputTokens = input.split("\\\\n");
+        input = inputTokens[1];
+    }
+
     private MyNumber[] splitNumbers(String input, MyRegex regex) {
         String[] numbers = input.split(regex.getRegex());
         MyNumber[] myNumbers = new MyNumber[numbers.length];
