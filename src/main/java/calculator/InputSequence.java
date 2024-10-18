@@ -1,11 +1,9 @@
 package calculator;
 
-import camp.nextstep.edu.missionutils.Console;
-
-public class InputSeqeunce {
+public class InputSequence {
     private String input;
 
-    public InputSeqeunce(String input) {
+    public InputSequence(String input) {
         this.input = input;
     }
 
