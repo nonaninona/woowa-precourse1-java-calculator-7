@@ -37,7 +37,7 @@
 2. 기본 덧셈 기능 구현 후 리팩토링<br>
    Calculator의 결합도를 낮추고, 응집도를 높임<br>
    1. 응집도 : UI 요소와의 조율 뿐 아니라 덧셈을 진행하는 비즈니스 로직을 Caculator가 모두 담당하는 문제 -> Adder로 비즈니스 로직을 분리해 응집도를 높임
-   2. 결합도 : Calculator가 UserInterface, Adder, InputSequence, MyNumber에 의존하는 문제 -> UserInterface가 MyNumber에 의존하도록 변경해서 Calculator의 Adder, MyNumber로의 의존성 제거
+   2. 결합도 : Calculator가 UserInterface, Adder, InputSequence, MyNumber에 의존하는 문제 -> UserInterface가 MyNumber에 의존하도록 변경해서 Calculator의 InputSequence로의 의존성 제거
    
    InputSequence가 MyRegex를 생성하는 과정에서 불필요한 분기문 제거
 3. 커스텀 구분자 추가 기능 협력 구상<br>
