@@ -28,13 +28,13 @@
 &nbsp;&nbsp;&nbsp;&nbsp;(N)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(N)<br>
 &nbsp;&nbsp;&nbsp;숫자(N)---------(1)입력값(1) - (1)구분자
 
-### 기능별 협력 과정
-1. 기본 덧셈 기능<br>
+### 기능별 구현 과정
+1. 기본 덧셈 기능 협력 구상<br>
   '더해라()' -> 계산기 -> '입력받아라()' -> UI -> '<< crate >>' 입력값<br><br>
   계산기 -> '숫자 구분해라()' -> 입력값<br>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;숫자&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<-<br><br>
   '계산 값' <- 계산기
-2. 1번 기능 구현 후 리팩토링<br>
+2. 기본 덧셈 기능 구현 후 리팩토링<br>
    Calculator의 결합도를 낮추고, 응집도를 높임<br>
    1. 응집도 : UI 요소와의 조율 뿐 아니라 덧셈을 진행하는 비즈니스 로직을 Caculator가 모두 담당하는 문제 -> Adder로 비즈니스 로직을 분리해 응집도를 높임
    2. 결합도 : Calculator가 UserInterface, Adder, InputSequence, MyNumber에 의존하는 문제 -> UserInterface가 MyNumber에 의존하도록 변경해서 Calculator의 Adder, MyNumber로의 의존성 제거
