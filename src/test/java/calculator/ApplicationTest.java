@@ -31,6 +31,7 @@ class ApplicationTest extends NsTest {
             assertThat(output()).contains("결과 : 0");
         });
     }
+
     @Test
     void 커스텀_구분자_사용() {
         assertSimpleTest(() -> {
@@ -58,10 +59,11 @@ class ApplicationTest extends NsTest {
     @Test
     void 예외_테스트() {
         assertSimpleTest(() ->
-            assertThatThrownBy(() -> runException("-1,2,3"))
-                .isInstanceOf(IllegalArgumentException.class)
+                assertThatThrownBy(() -> runException("-1,2,3"))
+                        .isInstanceOf(IllegalArgumentException.class)
         );
     }
+
     @Test
     void 예외_테스트_음수1개() {
         assertSimpleTest(() ->
@@ -69,6 +71,7 @@ class ApplicationTest extends NsTest {
                         .isInstanceOf(IllegalArgumentException.class)
         );
     }
+
     @Test
     void 예외_테스트_커스텀_구분자_음수1개() {
         assertSimpleTest(() ->
@@ -100,6 +103,7 @@ class ApplicationTest extends NsTest {
                         .isInstanceOf(IllegalArgumentException.class)
         );
     }
+
     @Test
     void 예외_테스트_커스텀_구분자_너무큰숫자() {
         assertSimpleTest(() ->
