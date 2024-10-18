@@ -10,21 +10,11 @@ public class InputSeqeunce {
     }
 
     public MyNumber[] getNumbers() {
-        MyRegex myRegex = splitRegex(input);
+        MyRegex myRegex = new MyRegex();
         return splitNumbers(input, myRegex);
     }
 
-    private MyRegex splitRegex(String input) {
-        System.out.println(input);
-        if(input.contains(":") && input.contains(","))
-            return new MyRegex(":|,");
-        else if(input.contains(":"))
-            return new MyRegex(":");
-        else if(input.contains(","))
-            return new MyRegex(",");
-        return null;
-    }
-
+    //MyRegex가 굳이 class로 있어야 하나? 있다면 좀 더 우아한 방법 없나? => 메소드 삭제, 기본 덧셈 기능에서는 다양한 regex 고려할 필요 없음
     private MyNumber[] splitNumbers(String input, MyRegex regex) {
         String[] numbers = input.split(regex.getRegex());
         MyNumber[] myNumbers = new MyNumber[numbers.length];
