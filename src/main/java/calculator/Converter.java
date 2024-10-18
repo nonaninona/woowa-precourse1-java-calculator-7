@@ -1,7 +1,7 @@
 package calculator;
 
 public class Converter {
-    public MyNumber[] convertNumbers(String[] numbers) {
+    public static MyNumber[] convertNumbers(String[] numbers) {
         for (String number : numbers) {
             if (number.contains("-"))
                 throw new IllegalArgumentException("잘못된 입력 : 음수");
