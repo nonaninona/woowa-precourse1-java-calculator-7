@@ -12,3 +12,25 @@
 3. 사용자 입력 예외 처리
    1. 사용자가 잘못된 값을 입력할 경우 IllegalArgumentException 발생시키고 애플리케이션 종료.<br>
    단, System.exit() 함수를 호출해 종료하면 안됨.
+   
+## 협력 설계
+### 기본적인 도메인 개념
+- 계산기
+- 사용자인터페이스(버튼, 스크린)
+- 입력값
+- 구분자
+- 숫자
+
+### 도메인 개념 간의 관계 파악
+계산기(1) - (1)사용자 인터페이스(1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(N)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(N)<br>
+&nbsp;&nbsp;&nbsp;숫자(N)---------(1)입력값(1) - (1)구분자
+
+### 기능별 협력 과정
+1. 기본 덧셈 기능<br>
+  '더해라()' -> 계산기 -> '입력받아라()' -> UI -> '<< crate >>' 입력값<br><br>
+  계산기 -> '숫자 구분해라()' -> 입력값<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;숫자&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<-<br><br>
+  '계산 값' <- 계산기
