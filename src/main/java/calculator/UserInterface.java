@@ -8,7 +8,7 @@ public class UserInterface {
         return inputSequence.getNumbers();
     }
 
-    public void print(String text) {
-        System.out.println(text);
+    public void printResult(MyNumber result) {
+        System.out.println("결과 : " + result.toInt());
     }
 }
