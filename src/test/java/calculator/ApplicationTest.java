@@ -58,7 +58,7 @@ class ApplicationTest extends NsTest {
     void 커스텀_구분자_사용_구분자_섞어서_사용() {
         assertSimpleTest(() -> {
             run("//;\\n1;3,5:5;3");
-            assertThat(output()).contains("결과 : 16");
+            assertThat(output()).contains("결과 : 17");
         });
     }
 
