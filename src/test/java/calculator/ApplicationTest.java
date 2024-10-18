@@ -65,8 +65,15 @@ class ApplicationTest extends NsTest {
     @Test
     void 예외_테스트_음수1개() {
         assertSimpleTest(() ->
-            assertThatThrownBy(() -> runException("-3"))
-                    .isInstanceOf(IllegalArgumentException.class)
+                assertThatThrownBy(() -> runException("-3"))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
+    @Test
+    void 예외_테스트_커스텀_구분자_음수1개() {
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException("//;;\n-3"))
+                        .isInstanceOf(IllegalArgumentException.class)
         );
     }
 
@@ -79,9 +86,24 @@ class ApplicationTest extends NsTest {
     }
 
     @Test
+    void 예외_테스트_커스텀_구분자_문자입력() {
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException("//p\nabcdef"))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
+
+    @Test
     void 예외_테스트_너무큰숫자() {
         assertSimpleTest(() ->
                 assertThatThrownBy(() -> runException("9999999999999999999,9999999999999999999"))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
+    @Test
+    void 예외_테스트_커스텀_구분자_너무큰숫자() {
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException("//;;\n9999999999999999999,9999999999999999999"))
                         .isInstanceOf(IllegalArgumentException.class)
         );
     }
