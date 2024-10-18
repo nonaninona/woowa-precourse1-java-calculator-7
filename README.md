@@ -44,3 +44,9 @@
    기존의 협력 구도에서, InputSequence가 Regex를 결정하는 구문 추가
 4. 커스텀 구분자 추가 기능 구현 후 리팩토링<br>
    없음. 단, InputSequence의 책임이 더 많아지는 시기가 오면 분리 예정
+5. InputSequence의 책임 분산
+   '숫자 구분해라()' -> Regex를 찾고, Regex를 적용해 분리하고, 숫자로 변환해라<br>
+   InputSequence는 그냥 삭제<br>
+   3가지 책임을 Parser 내 객체(Splitter, Converter)로 분산<br>
+   Regex를 찾고 분리하는 과정에서 다형성 적용<br>
+   객체 생성의 책임을 SplitterFactory로 이동

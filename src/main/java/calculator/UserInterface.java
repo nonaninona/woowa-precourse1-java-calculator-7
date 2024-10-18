@@ -3,9 +3,8 @@ package calculator;
 import camp.nextstep.edu.missionutils.Console;
 
 public class UserInterface {
-    public MyNumber[] getNumbers() {
-        InputSequence inputSequence = new InputSequence(Console.readLine());
-        return inputSequence.getNumbers();
+    public String getUserInput() {
+        return Console.readLine();
     }
 
     public void printResult(MyNumber result) {
