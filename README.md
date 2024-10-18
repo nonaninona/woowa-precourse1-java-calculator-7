@@ -40,3 +40,7 @@
    2. 결합도 : Calculator가 UserInterface, Adder, InputSequence, MyNumber에 의존하는 문제 -> UserInterface가 MyNumber에 의존하도록 변경해서 Calculator의 Adder, MyNumber로의 의존성 제거
    
    InputSequence가 MyRegex를 생성하는 과정에서 불필요한 분기문 제거
+3. 커스텀 구분자 추가 기능 협력 구상<br>
+   기존의 협력 구도에서, InputSequence가 Regex를 결정하는 구문 추가
+4. 커스텀 구분자 추가 기능 구현 후 리팩토링<br>
+   없음. 단, InputSequence의 책임이 더 많아지는 시기가 오면 분리 예정
