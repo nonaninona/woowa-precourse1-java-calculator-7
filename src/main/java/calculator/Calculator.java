@@ -6,6 +6,6 @@ public class Calculator {
 
     public void add() throws IllegalArgumentException {
         int ret = adder.add(userInterface.getNumbers());
-        System.out.println("결과 : " + ret);
+        userInterface.print("결과 : " + ret);
     }
 }

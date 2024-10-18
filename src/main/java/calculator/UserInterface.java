@@ -7,4 +7,8 @@ public class UserInterface {
         InputSequence inputSequence = new InputSequence(Console.readLine());
         return inputSequence.getNumbers();
     }
+
+    public void print(String text) {
+        System.out.println(text);
+    }
 }
