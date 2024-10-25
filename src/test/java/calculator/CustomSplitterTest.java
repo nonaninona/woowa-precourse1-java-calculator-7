@@ -10,39 +10,34 @@ import org.junit.jupiter.api.Test;
 
 public class CustomSplitterTest {
     @Test
-    void 커스텀_구분자_존재_시_스플릿() {
+    void 숫자구분하기() {
         //given
         CustomSplitter customSplitter = new CustomSplitter();
         String input1 = "//;;;\\n1;;;3";
-        String input2 = "//;;;\\n1;;;3";
+        String input2 = "//as\\n1as3";
 
         //when
         String[] result1 = customSplitter.splitNumbers(input1);
         String[] result2 = customSplitter.splitNumbers(input2);
 
         //then
-        for (String s : result1) {
-            System.out.println(s);
-        }
-        for (String s : result2) {
-            System.out.println(s);
-        }
-//        assertThat(result1).isInstanceOf(CustomSplitter.class);
-//        assertThat(result2).isInstanceOf(CustomSplitter.class);
+        assertThat(result1[0]).isEqualTo("1");
+        assertThat(result1[1]).isEqualTo("3");
+        assertThat(result2[0]).isEqualTo("1");
+        assertThat(result2[1]).isEqualTo("3");
     }
 
     @Test
-    void 커스텀_구분자_미존재_시_DefaultSplitter_생성() {
+    void 숫자가_없을때_숫자구분하기() {
         //given
-        String input1 = "//;;;1;;;3";
-        String input2 = "1,3";
+        CustomSplitter customSplitter = new CustomSplitter();
+        String input = "//;;;\n";
 
         //when
-        Splitter splitter1 = SplitterFactory.getSplitter(input1);
-        Splitter splitter2 = SplitterFactory.getSplitter(input2);
+        String[] result = customSplitter.splitNumbers(input);
 
         //then
-        assertThat(splitter1).isInstanceOf(DefaultSplitter.class);
-        assertThat(splitter2).isInstanceOf(DefaultSplitter.class);
+        assertThat(result.length).isEqualTo(1);
+        assertThat(result[0]).isEqualTo("0");
     }
 }
