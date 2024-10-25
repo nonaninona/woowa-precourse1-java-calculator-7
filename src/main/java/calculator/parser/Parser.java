@@ -1,4 +1,8 @@
-package calculator;
+package calculator.parser;
+
+import calculator.MyNumber;
+import calculator.parser.splitter.Splitter;
+import calculator.parser.splitter.SplitterFactory;
 
 public class Parser {
 

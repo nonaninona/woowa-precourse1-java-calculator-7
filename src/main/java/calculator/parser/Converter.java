@@ -1,4 +1,6 @@
-package calculator;
+package calculator.parser;
+
+import calculator.MyNumber;
 
 public class Converter {
     public static MyNumber[] convertNumbers(String[] numbers) {

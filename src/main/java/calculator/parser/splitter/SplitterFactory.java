@@ -1,4 +1,4 @@
-package calculator;
+package calculator.parser.splitter;
 
 public class SplitterFactory {
     public static Splitter getSplitter(String input) {

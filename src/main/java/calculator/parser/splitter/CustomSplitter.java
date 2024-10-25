@@ -1,4 +1,6 @@
-package calculator;
+package calculator.parser.splitter;
+
+import calculator.MyRegex;
 
 public class CustomSplitter implements Splitter {
     @Override
