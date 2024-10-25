@@ -7,7 +7,7 @@ public class DefaultSplitter implements Splitter {
     public String[] splitNumbers(String input) {
         MyRegex regex = new MyRegex();
         String[] inputTokens = input.split(regex.getRegex());
-        if (inputTokens.length == 1) {
+        if (input.isBlank()) {
             return new String[]{"0"};
         }
         return inputTokens;
