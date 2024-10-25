@@ -1,6 +1,9 @@
 package calculator;
 
 public class Adder {
+    private Adder() {
+    }
+
     public static MyNumber add(MyNumber[] myNumbers) {
         MyNumber sum = new MyNumber(0);
         try {

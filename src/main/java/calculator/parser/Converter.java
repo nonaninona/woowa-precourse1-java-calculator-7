@@ -4,6 +4,9 @@ import calculator.ErrorMessage;
 import calculator.MyNumber;
 
 public class Converter {
+    private Converter() {
+    }
+
     public static MyNumber[] convertNumbers(String[] numbers) {
         MyNumber[] myNumbers = new MyNumber[numbers.length];
         try {

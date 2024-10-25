@@ -5,6 +5,8 @@ import calculator.parser.splitter.Splitter;
 import calculator.parser.splitter.SplitterFactory;
 
 public class Parser {
+    private Parser() {
+    }
 
     public static MyNumber[] getNumbers(String input) {
         Splitter splitter = SplitterFactory.getSplitter(input);

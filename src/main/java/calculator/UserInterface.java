@@ -3,6 +3,9 @@ package calculator;
 import camp.nextstep.edu.missionutils.Console;
 
 public class UserInterface {
+    private UserInterface() {
+    }
+
     public static String getUserInput() {
         return Console.readLine();
     }
