@@ -20,12 +20,11 @@ public class ConverterTest {
         MyNumber[] myNumbers2 = Converter.convertNumbers(numbers2);
 
         //then
-        for (MyNumber myNumber : myNumbers1) {
-            System.out.println(myNumber.toInt());
-        }
-        for (MyNumber myNumber : myNumbers2) {
-            System.out.println(myNumber.toInt());
-        }
+        assertThat(myNumbers1[0].toInt()).isEqualTo(1);
+        assertThat(myNumbers1[1].toInt()).isEqualTo(3);
+        assertThat(myNumbers1[2].toInt()).isEqualTo(5);
+        assertThat(myNumbers2[0].toInt()).isEqualTo(6);
+        assertThat(myNumbers2[1].toInt()).isEqualTo(1000);
     }
 
     @Test
