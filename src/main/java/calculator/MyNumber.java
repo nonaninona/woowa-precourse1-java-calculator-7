@@ -12,7 +12,7 @@ public class MyNumber {
     }
 
     public void add(MyNumber target) {
-        this.value += target.toInt();
+        this.value = Math.addExact(this.value, target.toInt());
     }
 
     public int toInt() {
