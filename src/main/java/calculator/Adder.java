@@ -8,7 +8,7 @@ public class Adder {
                 sum.add(myNumber);
             }
         } catch (ArithmeticException e) {
-            throw new IllegalArgumentException("수의 합이 너무 큽니다.");
+            throw new IllegalArgumentException(ErrorMessage.TOO_LARGE_OUTPUT.getMessage());
         }
         return sum;
     }

@@ -1,5 +1,6 @@
 package calculator.parser;
 
+import calculator.ErrorMessage;
 import calculator.MyNumber;
 
 public class Converter {
@@ -8,11 +9,11 @@ public class Converter {
         try {
             for (int i = 0; i < numbers.length; i++) {
                 if (numbers[i].contains("-"))
-                    throw new IllegalArgumentException("잘못된 입력 : 음수");
+                    throw new IllegalArgumentException(ErrorMessage.NEGATIVE_NUMBER_INPUT.getMessage());
                 myNumbers[i] = new MyNumber(numbers[i]);
             }
         } catch(NumberFormatException e) {
-            throw new IllegalArgumentException("잘못된 입력 : 너무 큰 수 또는 문자가 포함된 수");
+            throw new IllegalArgumentException(ErrorMessage.TOO_LARGE_OR_CHARACTER_INPUT.getMessage());
         }
         return myNumbers;
     }
