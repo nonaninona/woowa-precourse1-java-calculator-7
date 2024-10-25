@@ -50,3 +50,9 @@
    3가지 책임을 Parser 내 객체(Splitter, Converter)로 분산<br>
    Regex를 찾고 분리하는 과정에서 다형성 적용<br>
    객체 생성의 책임을 SplitterFactory로 이동
+
+### TODO
+1. 예외처리 지점 명확히 표현하기
+2. 예외처리 시 오류 메시지 관리 enum으로 하기
+3. 단위 테스트 추가하기
+4. static 메서드 위주인 클래스 생성자 private으로 변환
